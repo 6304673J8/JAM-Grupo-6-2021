@@ -45,3 +45,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 1785503031
+    locked: 0
+  - name: BG_Detailed_Back
+    uniqueID: 880744305
+    locked: 0
+  - name: BG_Detailed_Front
+    uniqueID: 1566629699
+    locked: 0
+  - name: Lava
+    uniqueID: 3448720865
+    locked: 0
+  - name: Mountains
+    uniqueID: 4081041137
+    locked: 0
+  - name: Floor
+    uniqueID: 2609023007
+    locked: 0
+  - name: Character
+    uniqueID: 3617057113
+    locked: 0
+  - name: Hammer
+    uniqueID: 2133902401
+    locked: 0
