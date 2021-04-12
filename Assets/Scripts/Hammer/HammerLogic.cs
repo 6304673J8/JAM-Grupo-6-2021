@@ -4,44 +4,75 @@ using UnityEngine;
 
 public class HammerLogic : MonoBehaviour
 {
-    public float speed = 1f;
-    public float distance = 5f;
-    public Transform Hammer;
+    public float speed = .3f;
+    //public float distance = 5f;
+    private Transform thrower;
+    Rigidbody2D rb;
 
-    private float _travelledDistance;
+    float _travelledDistance;
     public bool isBack = false;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+    void OnEnable()
+    {
+        //thrower = GameObject.FindGameObjectWithTag("Finish").transform;
+        thrower = GameObject.FindGameObjectWithTag("Player").transform;
+        _travelledDistance = 0.0f;
+        //thrower.gameObject.SetActive(true); // activating the object
+    }
 
     public void Thrown()
     {
+        Debug.Log("hammered");
+
         _travelledDistance = 0;
         isBack = false;
         enabled = true;
     }
-    
+
     void Update()
     {
-        float route = Time.deltaTime * speed;
+        //Vector2 dir = (Vector2)thrower.position - rb.position;
+        //float route = speed * Time.deltaTime;
+        _travelledDistance += Time.deltaTime;
+        if (_travelledDistance >= 1f)
+        {
+            isBack = true;
+        }
 
         if (!isBack)
         {
-            Hammer.Translate(Vector2.right * route); //hammer moves
-            _travelledDistance += route; //updates distance
-            isBack = _travelledDistance >= distance;
+            transform.Translate(Vector2.right * speed * Time.deltaTime); //hammer moves
+            //_travelledDistance += route; //updates distance
+            //isBack = _travelledDistance >= distance;
         }
         else
         {
-            Hammer.Translate(Vector2.right * -route); //moves object
-            _travelledDistance -= route;
-            enabled = _travelledDistance > 0;
+            //transform.right = thrower.position - transform.position;
+            transform.Translate(Vector2.right * -(speed * Time.deltaTime)); //moves object
+            //_travelledDistance -= route;
+            //enabled = _travelledDistance > 0;
         }
     }
 
-    private void OnEnable()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Hammer.gameObject.SetActive(true); // activating the object
+        if (other.tag == "Thrower")
+        {
+            speed = 0;
+            //enabled = false;
+        }
+        if (other.tag == "Enemy")
+        {
+            isBack = true;
+        }
     }
-    private void OnDisable()
+
+    /*private void OnDisable()
     {
-        Hammer.gameObject.SetActive(false); // activating the object
-    }
+        thrower.gameObject.SetActive(false); // deactivating the object
+    }*/
 }

@@ -17,9 +17,12 @@ public class CharacterMovement : MonoBehaviour
     private bool isJumping;
 
     //GEOH code
-    public GameObject hammerPrefab;
+    /*public GameObject hammerPrefab;
     bool hasReturned;
-    HammerLogic hammerLogic;
+    HammerLogic hammerLogic;*/
+
+    //HammerLogic hammerLogic;
+    //public Transform thrower;
 
     // Start is called before the first frame update
     void Start()
@@ -30,15 +33,10 @@ public class CharacterMovement : MonoBehaviour
 
         //GEOH code
 
-        //hammerLogic = GameObject.FindGameObjectWithTag("Hammer").GetComponent<HammerLogic>();
-        hammerLogic = GameObject.FindGameObjectWithTag("Respawn").GetComponent<HammerLogic>();
-        hasReturned = hammerLogic.GetComponent<HammerLogic>().isBack;
-
+        //hammerLogic = GameObject.FindGameObjectWithTag("Scenario").GetComponent<HammerLogic>();
+        //hammerLogic = GameObject.FindGameObjectWithTag("Respawn").GetComponent<HammerLogic>();
     }
 
-    void Update()
-    {
-    }
     // Update is called once per frame
     private void FixedUpdate()
     {
@@ -59,19 +57,6 @@ public class CharacterMovement : MonoBehaviour
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
         }
-        //GEOH code
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("ENTRA");
-            hammerLogic.Thrown();
-            if (hasReturned) {
-                Debug.Log("t4esdted");
-
-                GameObject hammerObject = Instantiate(hammerPrefab, transform.position + transform.right * 1, transform.rotation);
-            }
-        }
-
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -115,4 +100,11 @@ public class CharacterMovement : MonoBehaviour
         }
         return false;
     }
+
+    /*public void Flip()
+    {
+        facingRight = !facingRight;
+
+        transform.Rotate(0f, 180f, 0f);
+    }*/
 }
