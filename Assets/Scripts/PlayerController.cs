@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 startPosition;
 
     public GameObject deathbody;
+    private GameObject deathbodyToCrash;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey("space") && !isJumping)
         {
+            Destroy(deathbodyToCrash);
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
         }
 
@@ -81,7 +83,32 @@ public class PlayerController : MonoBehaviour
                 hits = Physics2D.RaycastAll(rightPosition, -Vector2.up, 2);
                 if (checkRaycastWithScenario(hits)) { col3 = true; }
 
-                if (col1 || col2 || col3) { isJumping = false; }
+                if (col1 || col2 || col3) { isJumping = false; jumpForce = 5; deathbodyToCrash = null; }
+            }
+        }
+        if (collision.gameObject.tag == "Body")
+        {
+            if (isJumping)
+            {
+                bool col1 = false;
+                bool col2 = false;
+                bool col3 = false;
+
+                float center_x = (box2D.bounds.min.x + box2D.bounds.max.x) / 2;
+                Vector2 centerPosition = new Vector2(center_x, box2D.bounds.min.y);
+                Vector2 leftPosition = new Vector2(box2D.bounds.min.x, box2D.bounds.min.y);
+                Vector2 rightPosition = new Vector2(box2D.bounds.max.x, box2D.bounds.min.y);
+
+                RaycastHit2D[] hits = Physics2D.RaycastAll(centerPosition, -Vector2.up, 2);
+                if (checkRaycastWithScenario(hits)) { col1 = true; }
+
+                hits = Physics2D.RaycastAll(leftPosition, -Vector2.up, 2);
+                if (checkRaycastWithScenario(hits)) { col2 = true; }
+
+                hits = Physics2D.RaycastAll(rightPosition, -Vector2.up, 2);
+                if (checkRaycastWithScenario(hits)) { col3 = true; }
+
+                if (col1 || col2 || col3) { isJumping = false; jumpForce = 10; deathbodyToCrash = collision.gameObject; }
             }
         }
     }
