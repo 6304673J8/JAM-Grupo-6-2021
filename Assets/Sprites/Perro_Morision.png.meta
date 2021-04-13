@@ -1,7 +1,124 @@
 fileFormatVersion: 2
 guid: 947a5ec988fa978479fc939c316aa846
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 438507261436378972
+    second: Perro_Morision_0
+  - first:
+      213: -1719980474509622693
+    second: Perro_Morision_1
+  - first:
+      213: 5387235659146010943
+    second: Perro_Morision_2
+  - first:
+      213: 8817250246138921096
+    second: Perro_Morision_3
+  - first:
+      213: 836733906721461662
+    second: Perro_Morision_4
+  - first:
+      213: -5401445861238711168
+    second: Perro_Morision_5
+  - first:
+      213: 1164717362754357309
+    second: Perro_Morision_6
+  - first:
+      213: 1958665317699536939
+    second: Perro_Morision_7
+  - first:
+      213: 3976629188796682230
+    second: Perro_Morision_8
+  - first:
+      213: -5084543685145683012
+    second: Perro_Morision_9
+  - first:
+      213: -4974911241607798205
+    second: Perro_Morision_10
+  - first:
+      213: 5417384693418345334
+    second: Perro_Morision_11
+  - first:
+      213: 8661523029805150716
+    second: Perro_Morision_12
+  - first:
+      213: 7630533979835734206
+    second: Perro_Morision_13
+  - first:
+      213: -7890675397630899439
+    second: Perro_Morision_14
+  - first:
+      213: -2830913562047264020
+    second: Perro_Morision_15
+  - first:
+      213: -3641269078974443961
+    second: Perro_Morision_16
+  - first:
+      213: 7846143447385180375
+    second: Perro_Morision_17
+  - first:
+      213: 74822045789013008
+    second: Perro_Morision_18
+  - first:
+      213: 1579592065990844033
+    second: Perro_Morision_19
+  - first:
+      213: -1559061140620305999
+    second: Perro_Morision_20
+  - first:
+      213: -6886438108954080056
+    second: Perro_Morision_21
+  - first:
+      213: -4277789502083936783
+    second: Perro_Morision_22
+  - first:
+      213: 6902123224926235573
+    second: Perro_Morision_23
+  - first:
+      213: -8935837146154395149
+    second: Perro_Morision_24
+  - first:
+      213: -7435460176083936133
+    second: Perro_Morision_25
+  - first:
+      213: 5821434158098932420
+    second: Perro_Morision_26
+  - first:
+      213: 7336678235333264867
+    second: Perro_Morision_27
+  - first:
+      213: 2628144008830854475
+    second: Perro_Morision_28
+  - first:
+      213: 5708832597158087263
+    second: Perro_Morision_29
+  - first:
+      213: 3765601856909511955
+    second: Perro_Morision_30
+  - first:
+      213: -468386534054647741
+    second: Perro_Morision_31
+  - first:
+      213: -2683939932162247217
+    second: Perro_Morision_32
+  - first:
+      213: -2762535419972958889
+    second: Perro_Morision_33
+  - first:
+      213: 2487054119862011272
+    second: Perro_Morision_34
+  - first:
+      213: -3069595780687342344
+    second: Perro_Morision_35
+  - first:
+      213: 6785717049014270062
+    second: Perro_Morision_36
+  - first:
+      213: -8780254202008575233
+    second: Perro_Morision_37
+  - first:
+      213: -6909494153730219387
+    second: Perro_Morision_38
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +148,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +157,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -64,7 +181,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,7 +214,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Perro_Morision_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 795
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5016728, y: 0.13036534}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f385de704e51600800000000000000
+      internalID: 438507261436378972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_1
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 799
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12158339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b520f3c0fd66128e0800000000000000
+      internalID: -1719980474509622693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_2
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 796
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14148507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3127b80a4e43ca40800000000000000
+      internalID: 5387235659146010943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_3
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 801
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1325244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88006d0126a2d5a70800000000000000
+      internalID: 8817250246138921096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_4
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 801
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.4959948, y: 0.1250257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9558a11e0dac9b00800000000000000
+      internalID: 836733906721461662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_5
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 377
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.09100299}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cdc577b953a05b0800000000000000
+      internalID: -5401445861238711168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_6
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 376
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5000002, y: 0.08974983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3804be3548e92010800000000000000
+      internalID: 1164717362754357309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_7
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 371
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5112812, y: 0.101565205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28cb5f9ab39e2b10800000000000000
+      internalID: 1958665317699536939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_8
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 370
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5112814, y: 0.109194174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff0da99d23df2730800000000000000
+      internalID: 3976629188796682230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_9
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 377
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5000007, y: 0.0775078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb9fe915721079b0800000000000000
+      internalID: -5084543685145683012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342aede759095fab0800000000000000
+      internalID: -4974911241607798205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_11
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 0
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673c6d61daa6e2b40800000000000000
+      internalID: 5417384693418345334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_12
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1b66d0e49e33870800000000000000
+      internalID: 8661523029805150716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_13
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 2
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb818a2f93a15e960800000000000000
+      internalID: 7630533979835734206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perro_Morision_14
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 0
+        width: 338
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.26}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11bcb4e4880be7290800000000000000
+      internalID: -7890675397630899439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
