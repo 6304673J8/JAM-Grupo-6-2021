@@ -8,6 +8,129 @@ TextureImporter:
   - first:
       213: 6163939971549662439
     second: Jump_Hammer_1
+  - first:
+      213: -890219251537154279
+    second: Jump_Hammer_0
+  - first:
+      213: -5273586770915827310
+    second: Jump_Hammer_1
+  - first:
+      213: -1031621540404748497
+    second: Jump_Hammer_2
+  - first:
+      213: -8709723313139526236
+    second: Jump_Hammer_3
+  - first:
+      213: 3644177682837810861
+    second: Jump_Hammer_4
+  - first:
+      213: -303157330255604452
+    second: Jump_Hammer_5
+  - first:
+      213: -6696157535369256590
+    second: Jump_Hammer_6
+  - first:
+      213: 4339999950958903501
+    second: Jump_Hammer_7
+  - first:
+      213: -801405289865106550
+    second: Jump_Hammer_8
+  - first:
+      213: -352480776206176075
+    second: Jump_Hammer_9
+  - first:
+      213: -6659362633219019348
+    second: Jump_Hammer_10
+  - first:
+      213: -4124183319802805552
+    second: Jump_Hammer_11
+  - first:
+      213: 22932875257471766
+    second: Jump_Hammer_12
+  - first:
+      213: -7046529804422077702
+    second: Jump_Hammer_13
+  - first:
+      213: -684839127620810408
+    second: Jump_Hammer_14
+  - first:
+      213: 8125324419247723841
+    second: Jump_Hammer_15
+  - first:
+      213: -757863254662673342
+    second: Jump_Hammer_16
+  - first:
+      213: 7491750891565180425
+    second: Jump_Hammer_17
+  - first:
+      213: -4666612567864684495
+    second: Jump_Hammer_18
+  - first:
+      213: -1773043987594749962
+    second: Jump_Hammer_19
+  - first:
+      213: 5665074855953606199
+    second: Jump_Hammer_20
+  - first:
+      213: 5377836359790259393
+    second: Jump_Hammer_21
+  - first:
+      213: -9167044019778430189
+    second: Jump_Hammer_22
+  - first:
+      213: -8837859066062541505
+    second: Jump_Hammer_23
+  - first:
+      213: 1629549291586552632
+    second: Jump_Hammer_24
+  - first:
+      213: 8530077574025667705
+    second: Jump_Hammer_25
+  - first:
+      213: -8375185084076780012
+    second: Jump_Hammer_26
+  - first:
+      213: -364208239561756414
+    second: Jump_Hammer_27
+  - first:
+      213: -2815602334242860043
+    second: Jump_Hammer_28
+  - first:
+      213: 480542488576717169
+    second: Jump_Hammer_29
+  - first:
+      213: -5294370688830624948
+    second: Jump_Hammer_30
+  - first:
+      213: 1373664468653803157
+    second: Jump_Hammer_31
+  - first:
+      213: -3974702374761117568
+    second: Jump_Hammer_32
+  - first:
+      213: 2173658234060971247
+    second: Jump_Hammer_33
+  - first:
+      213: 3666823692903768835
+    second: Jump_Hammer_34
+  - first:
+      213: 6496300092814683041
+    second: Jump_Hammer_35
+  - first:
+      213: 7558738433546884325
+    second: Jump_Hammer_36
+  - first:
+      213: -5607144352413649553
+    second: Jump_Hammer_37
+  - first:
+      213: -8652717129302083999
+    second: Jump_Hammer_38
+  - first:
+      213: -171439116017920243
+    second: Jump_Hammer_39
+  - first:
+      213: -7284160546535800640
+    second: Jump_Hammer_40
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -37,7 +160,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -51,7 +174,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +193,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +205,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

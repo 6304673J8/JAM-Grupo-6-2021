@@ -6,7 +6,11 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Sprites/Animations/Herrero/MOVEMENT.anim
   m_Name: MOVEMENT
+=======
+  m_Name: JUMP
+>>>>>>> Stashed changes:Assets/Sprites/Animations/Herrero/JUMP_hammer.anim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
