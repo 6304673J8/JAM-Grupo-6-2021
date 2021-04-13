@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 2.75}
+  m_Size: {x: 0.1, y: 7.57}
   m_EdgeRadius: 0
 --- !u!212 &1842869478
 SpriteRenderer:
@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8216808661691052732}
   - component: {fileID: 8216808661691052733}
+  - component: {fileID: 5877094541291481147}
   - component: {fileID: 8216808661691052722}
   - component: {fileID: 8216808661691052723}
   - component: {fileID: 7000318616406553729}
@@ -208,6 +209,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5877094541291481147
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216808661691052720}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9eac778b9bc42344b8595484a85c8ece, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &8216808661691052722
 Rigidbody2D:
   serializedVersion: 4
@@ -220,7 +240,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -300,3 +320,4 @@ MonoBehaviour:
   thrower: {fileID: 5358878335193651163}
   hammerPrefab: {fileID: 1381183859994494606, guid: 175530c115838224fabeb703bc979cb5,
     type: 3}
+  speed: 0.3
