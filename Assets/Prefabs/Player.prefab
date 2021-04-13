@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6504301691118479273}
   - component: {fileID: 4794828344725416622}
-  - component: {fileID: 6367808803040744041}
   m_Layer: 0
   m_Name: Thrower
   m_TagString: Thrower
@@ -82,18 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6367808803040744041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7579489077452694615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8249fec8721306418a69aa64056174f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8216808661691052720
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +206,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12, y: 12}
+    oldSize: {x: 10, y: 10}
     newSize: {x: 12.508144, y: 15.000001}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -242,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   jumpForce: 5
+  hammer: 0
   deathbody: {fileID: 3351478214950563393, guid: 105d86729b34a0248910a7181193718f,
     type: 3}
 --- !u!114 &171916344
@@ -259,6 +247,7 @@ MonoBehaviour:
   thrower: {fileID: 6504301691118479273}
   hammerPrefab: {fileID: 1381183859994494606, guid: 175530c115838224fabeb703bc979cb5,
     type: 3}
+  throwerVisible: {fileID: 7579489077452694615}
   speed: 0.3
 --- !u!114 &171916343
 MonoBehaviour:
@@ -272,3 +261,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8249fec8721306418a69aa64056174f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwerVisible: {fileID: 7579489077452694615}

@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 2;
     public int jumpForce = 3;
 
+    public bool hammer;
     private int direction;
     private bool isJumping;
     private Vector3 startPosition;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         box2D = GetComponent<BoxCollider2D>();
         startPosition = transform.position;
+        hammer = true;
     }
 
     // Update is called once per frame

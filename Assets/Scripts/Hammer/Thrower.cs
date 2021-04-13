@@ -6,6 +6,7 @@ public class Thrower : MonoBehaviour
 {
     public Transform thrower;
     public GameObject hammerPrefab;
+    public GameObject throwerVisible;
     public float speed = .3f;
     float _travelledDistance;
     
@@ -14,10 +15,12 @@ public class Thrower : MonoBehaviour
     {
         _travelledDistance += Time.deltaTime;
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") && GetComponent<PlayerController>().hammer)
         {
             Debug.Log("e Pressed");
             Throw();
+            throwerVisible.SetActive(false);
+            GetComponent<PlayerController>().hammer = false;
         }
     }
 
