@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        sceneLoader.GetComponent<levelLoaderScript>().LoadNextLevel("GameScene");
+        sceneLoader.GetComponent<levelLoaderScript>().LoadNextLevel();
     }
     public void QuitGame()
     {

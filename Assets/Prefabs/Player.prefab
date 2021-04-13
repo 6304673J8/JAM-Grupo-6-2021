@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8216808661691052735}
   - component: {fileID: 171916344}
   - component: {fileID: 171916343}
+  - component: {fileID: 8435962734182080025}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -111,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8216808661691052720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: 2.02, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 6504301691118479273}
@@ -227,9 +228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad25670339255e142a7eaa4b01f3c1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
   jumpForce: 5
   hammer: 0
+  isJumping: 0
   deathbody: {fileID: 3351478214950563393, guid: 105d86729b34a0248910a7181193718f,
     type: 3}
 --- !u!114 &171916344
@@ -262,3 +264,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwerVisible: {fileID: 7579489077452694615}
+--- !u!58 &8435962734182080025
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216808661691052720}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.94697094, y: -2.5605354}
+  serializedVersion: 2
+  m_Radius: 1.7926158

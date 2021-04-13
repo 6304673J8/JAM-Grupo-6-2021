@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 startPosition;
 
     public GameObject deathbody;
+    public GameObject levelLoader;
     private GameObject deathbodyToCrash;
     // Start is called before the first frame update
     void Start()
@@ -127,10 +128,21 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Enemy" ) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (collision.gameObject.tag == "Lava")
+        else if (collision.gameObject.tag == "Lava")
         {
             GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
             transform.position = startPosition;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "CheckPoint")
+        {
+            startPosition = transform.position;
+        }
+        else if (collision.tag == "NextLevel")
+        {
+            levelLoader.GetComponent<levelLoaderScript>().LoadNextLevel();
         }
     }
 }

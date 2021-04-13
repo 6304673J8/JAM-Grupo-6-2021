@@ -10,6 +10,8 @@ TagManager:
   - Hammer
   - Body
   - Lava
+  - CheckPoint
+  - NextLevel
   layers:
   - Default
   - TransparentFX
