@@ -27,6 +27,7 @@ public class SlimeController : MonoBehaviour
 
     public GameObject deathParticles;
 
+    private Color fColor;
 
     public float totalTime;
     // Start is called before the first frame update
@@ -43,13 +44,16 @@ public class SlimeController : MonoBehaviour
         switch (enemyType)
         {
             case Enemy.JUMPER:
-                sprRend.color = new Color(214, 0, 0, 255);
+                fColor = new Color(214, 0, 0, 255);
+                sprRend.color = fColor;
                 break;
             case Enemy.WALKER:
-                sprRend.color = new Color(0, 152, 214, 255);
+                fColor = new Color(0, 152, 214, 255);
+                sprRend.color = fColor;
                 break;
             case Enemy.DASHER:
-                sprRend.color = new Color(242, 229, 0, 255);
+                fColor = new Color(242, 229, 0, 255);
+                sprRend.color = fColor;
                 break;
         }
     }
@@ -128,6 +132,7 @@ public class SlimeController : MonoBehaviour
         if (collision.tag == "Hammer")
         {
             GameObject deathParticle = Instantiate(deathParticles, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+            deathParticle.gameObject.GetComponentInChildren<ParticleSystem>().startColor = fColor;
             Destroy(deathParticle, 3);
             Destroy(this.gameObject);
         }
