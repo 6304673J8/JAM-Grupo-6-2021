@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 660b726f08c8bea46902e1c7b8c6030c
+guid: 6c8bf11eba5b37843a688d8008c88358
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 576359379764288957
-    second: Run_Herrero_noHammer_0
+      213: 4219120273694292525
+    second: Run_Herrero_Hammer_0
   - first:
-      213: 8869621720567422435
-    second: Run_Herrero_noHammer_1
+      213: 3301683063079833715
+    second: Run_Herrero_Hammer_1
   - first:
-      213: -856483448385107171
-    second: Run_Herrero_noHammer_2
+      213: 726714131046109545
+    second: Run_Herrero_Hammer_2
   - first:
-      213: 7103913499882956089
-    second: Run_Herrero_noHammer_3
+      213: 9020252399262541688
+    second: Run_Herrero_Hammer_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,12 +99,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run_Herrero_noHammer_0
+      name: Run_Herrero_Hammer_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1238
+        width: 1240
         height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -113,19 +113,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbd90dd5dc3aff700800000000000000
-      internalID: 576359379764288957
+      spriteID: d2a723af8835d8a30800000000000000
+      internalID: 4219120273694292525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_Herrero_noHammer_1
+      name: Run_Herrero_Hammer_1
       rect:
         serializedVersion: 2
-        x: 1238
+        x: 1240
         y: 0
-        width: 1238
+        width: 1240
         height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -134,19 +134,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ed928a26f9371b70800000000000000
-      internalID: 8869621720567422435
+      spriteID: 3701cc7b04fe1dd20800000000000000
+      internalID: 3301683063079833715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_Herrero_noHammer_2
+      name: Run_Herrero_Hammer_2
       rect:
         serializedVersion: 2
-        x: 2476
+        x: 2480
         y: 0
-        width: 1238
+        width: 1240
         height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -155,19 +155,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1b010f67d82d14f0800000000000000
-      internalID: -856483448385107171
+      spriteID: 9619242e6aec51a00800000000000000
+      internalID: 726714131046109545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_Herrero_noHammer_3
+      name: Run_Herrero_Hammer_3
       rect:
         serializedVersion: 2
-        x: 3714
+        x: 3720
         y: 0
-        width: 1238
+        width: 1240
         height: 1500
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -176,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93520a3a0bb269260800000000000000
-      internalID: 7103913499882956089
+      spriteID: 877a86a04cf5e2d70800000000000000
+      internalID: 9020252399262541688
       vertices: []
       indices: 
       edges: []
