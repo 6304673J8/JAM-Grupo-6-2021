@@ -69,6 +69,17 @@ public class HammerLogic : MonoBehaviour
         {
             isBack = true;
         }
+        if (other.tag == "Scenario")
+        {
+            isBack = true;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Scenario")
+        {
+            isBack = true;
+        }
     }
 
     /*private void OnDisable()

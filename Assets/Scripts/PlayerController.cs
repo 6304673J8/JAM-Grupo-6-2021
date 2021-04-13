@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     // Variables de componentes
     private Rigidbody2D rb2d;
     private BoxCollider2D box2D;
+    private SpriteRenderer sprRend;
 
     // Variables para modificar el personaje
     public float speed = 2;
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public bool hammer;
     private int direction;
-    private bool isJumping;
+    public bool isJumping;
     private Vector3 startPosition;
 
     public GameObject deathbody;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         direction = 1;
         rb2d = GetComponent<Rigidbody2D>();
         box2D = GetComponent<BoxCollider2D>();
+        sprRend = GetComponent<SpriteRenderer>();
         startPosition = transform.position;
         hammer = true;
     }
@@ -37,10 +39,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("d"))
         {
             direction = 1;
+            sprRend.flipX = false;
         }
         else if (Input.GetKey("a"))
         {
             direction = -1;
+            sprRend.flipX = true;
         }
         else
         {
@@ -73,44 +77,35 @@ public class PlayerController : MonoBehaviour
 
                 float center_x = (box2D.bounds.min.x + box2D.bounds.max.x) / 2;
                 Vector2 centerPosition = new Vector2(center_x, box2D.bounds.min.y);
-                Vector2 leftPosition = new Vector2(box2D.bounds.min.x, box2D.bounds.min.y);
-                Vector2 rightPosition = new Vector2(box2D.bounds.max.x, box2D.bounds.min.y);
+                Vector2 leftPosition = new Vector2(box2D.bounds.min.x + 0.1f, box2D.bounds.min.y);
+                Vector2 rightPosition = new Vector2(box2D.bounds.max.x - 0.1f, box2D.bounds.min.y);
 
-                RaycastHit2D[] hits = Physics2D.RaycastAll(centerPosition, -Vector2.up, 2);
+                RaycastHit2D[] hits = Physics2D.RaycastAll(centerPosition, Vector2.down, 0.1f);
+                Debug.DrawRay(centerPosition, Vector2.down, Color.red, 1);
                 if (checkRaycastWithScenario(hits)) { col1 = true; }
 
-                hits = Physics2D.RaycastAll(leftPosition, -Vector2.up, 2);
+                hits = Physics2D.RaycastAll(leftPosition, -Vector2.up, 0.1f);
                 if (checkRaycastWithScenario(hits)) { col2 = true; }
+                Debug.DrawRay(leftPosition, -Vector2.up, Color.red, 1);
 
-                hits = Physics2D.RaycastAll(rightPosition, -Vector2.up, 2);
+                hits = Physics2D.RaycastAll(rightPosition, -Vector2.up, 0.1f);
                 if (checkRaycastWithScenario(hits)) { col3 = true; }
+                Debug.DrawRay(rightPosition, -Vector2.up, Color.red, 1);
 
                 if (col1 || col2 || col3) { isJumping = false; jumpForce = 5; deathbodyToCrash = null; }
+            }
+            else
+            {
+                isJumping = true;
             }
         }
         if (collision.gameObject.tag == "Body")
         {
             if (isJumping)
             {
-                bool col1 = false;
-                bool col2 = false;
-                bool col3 = false;
-
-                float center_x = (box2D.bounds.min.x + box2D.bounds.max.x) / 2;
-                Vector2 centerPosition = new Vector2(center_x, box2D.bounds.min.y);
-                Vector2 leftPosition = new Vector2(box2D.bounds.min.x, box2D.bounds.min.y);
-                Vector2 rightPosition = new Vector2(box2D.bounds.max.x, box2D.bounds.min.y);
-
-                RaycastHit2D[] hits = Physics2D.RaycastAll(centerPosition, -Vector2.up, 2);
-                if (checkRaycastWithScenario(hits)) { col1 = true; }
-
-                hits = Physics2D.RaycastAll(leftPosition, -Vector2.up, 2);
-                if (checkRaycastWithScenario(hits)) { col2 = true; }
-
-                hits = Physics2D.RaycastAll(rightPosition, -Vector2.up, 2);
-                if (checkRaycastWithScenario(hits)) { col3 = true; }
-
-                if (col1 || col2 || col3) { isJumping = false; jumpForce = 10; deathbodyToCrash = collision.gameObject; }
+                isJumping = false; 
+                jumpForce = 10; 
+                deathbodyToCrash = collision.gameObject;
             }
         }
     }
@@ -131,6 +126,11 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" ) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (collision.gameObject.tag == "Lava")
+        {
+            GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
+            transform.position = startPosition;
         }
     }
 }

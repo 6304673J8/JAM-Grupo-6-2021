@@ -9,6 +9,7 @@ TagManager:
   - Thrower
   - Hammer
   - Body
+  - Lava
   layers:
   - Default
   - TransparentFX
