@@ -2,50 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterPatrol : MonoBehaviour
+public class MonsterController : MonoBehaviour
 {
-    public LayerMask groundLayers;
-    private Rigidbody2D rb2d;
-    private BoxCollider2D box2D;
-    public Transform groundCheck;
-    bool isFacingRight = true;
+    private Animator animator;
+    private int runParamID;
+    private int attackParamID;
+    private int deathParamID;
 
-    // Variables para modificar el personaje
-    public float speed = 2;
-    public int jumpForce = 3;
-
-    public int direction;
     public bool playerDetected;
-    private bool attackCooldown;
-
-    // Animation vars
-    private bool firstJ;
-    private bool secondJ;
-    public GameObject deathParticles;
-
-    RaycastHit2D hit;
+    //movement
+    public float speed = 2;
+    public int direction;
     public float totalTime;
 
+    private Rigidbody2D rb2d;
+    private BoxCollider2D box2D;
+    // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        runParamID = Animator.StringToHash("isMoving");
+        attackParamID = Animator.StringToHash("attacking");
+        deathParamID = Animator.StringToHash("rip");
+
+        playerDetected = false;
         direction = 1;
         totalTime = 0;
-        playerDetected = false;
-        firstJ = true;
-        secondJ = false;
+
         rb2d = GetComponent<Rigidbody2D>();
         box2D = GetComponent<BoxCollider2D>();
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        hit = Physics2D.Raycast(groundCheck.position, -transform.up, 1f, groundLayers);
+        bool isRunning = false;
+        if (playerDetected)
+        {
+            animator.SetTrigger(attackParamID);
+        }
+        else
+        {
+            isRunning = true;
+        }
+        animator.SetBool(runParamID, isRunning);
+
     }
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         float delta = Time.fixedDeltaTime * 1000;
-        if (hit.collider != false)
-        {
             if (playerDetected)
             {
                 if (firstJ)
@@ -75,16 +80,11 @@ public class MonsterPatrol : MonoBehaviour
                 rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
             }
             totalTime += delta;
-        }
-        else
-        {
-            Debug.Log("xd");
-            isFacingRight = !isFacingRight;
-            transform.localScale = new Vector3(-transform.localScale.x, 1f, 1f);
-        }
-        totalTime += delta;
     }
-
+    public void StopMovement()
+    {
+        animator.SetBool(runParamID, );
+    }*/
     private void changeDirection()
     {
         direction = direction * -1;
@@ -94,9 +94,7 @@ public class MonsterPatrol : MonoBehaviour
     {
         if (collision.tag == "Hammer")
         {
-            GameObject deathParticle = Instantiate(deathParticles, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
-            Destroy(deathParticle, 3);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 3);
         }
     }
 }
