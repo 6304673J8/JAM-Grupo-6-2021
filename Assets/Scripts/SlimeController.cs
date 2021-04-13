@@ -127,7 +127,7 @@ public class SlimeController : MonoBehaviour
     {
         if (collision.tag == "Hammer")
         {
-            GameObject deathParticle = Instantiate(deathParticles, new Vector3(transform.position.x, transform.position.y), transform.rotation);
+            GameObject deathParticle = Instantiate(deathParticles, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
             Destroy(deathParticle, 3);
             Destroy(this.gameObject);
         }

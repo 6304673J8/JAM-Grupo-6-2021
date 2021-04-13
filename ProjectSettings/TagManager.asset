@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Thrower
   - Hammer
+  - Body
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - detectplayer
+  - hammer
   - 
   - 
   - 

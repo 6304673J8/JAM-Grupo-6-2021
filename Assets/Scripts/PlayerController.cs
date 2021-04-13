@@ -16,12 +16,16 @@ public class PlayerController : MonoBehaviour
 
     private int direction;
     private bool isJumping;
+    private Vector3 startPosition;
+
+    public GameObject deathbody;
     // Start is called before the first frame update
     void Start()
     {
         direction = 1;
         rb2d = GetComponent<Rigidbody2D>();
         box2D = GetComponent<BoxCollider2D>();
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -38,6 +42,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             direction = 0;
+        }
+
+        if (Input.GetKeyDown("f"))
+        {
+            GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
+            transform.position = startPosition;
         }
 
         if (Input.GetKey("space") && !isJumping)
