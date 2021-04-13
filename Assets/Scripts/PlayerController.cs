@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public int jumpForce = 3;
 
     public bool hammer;
-    private int direction;
+    public int direction;
     public bool isJumping;
     private Vector3 startPosition;
 
@@ -32,6 +32,20 @@ public class PlayerController : MonoBehaviour
         sprRend = GetComponent<SpriteRenderer>();
         startPosition = transform.position;
         hammer = true;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey("space") && !isJumping)
+        {
+            Destroy(deathbodyToCrash);
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
+        }
+        if (Input.GetKeyDown("f") && hammer)
+        {
+            GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
+            transform.position = startPosition;
+        }
     }
 
     // Update is called once per frame
@@ -50,18 +64,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             direction = 0;
-        }
-
-        if (Input.GetKeyDown("f"))
-        {
-            GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
-            transform.position = startPosition;
-        }
-
-        if (Input.GetKey("space") && !isJumping)
-        {
-            Destroy(deathbodyToCrash);
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
         }
 
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
@@ -126,7 +128,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy" ) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            transform.position = startPosition;
         }
         else if (collision.gameObject.tag == "Lava")
         {
