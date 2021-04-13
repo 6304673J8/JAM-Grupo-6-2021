@@ -6,10 +6,14 @@ public class Thrower : MonoBehaviour
 {
     public Transform thrower;
     public GameObject hammerPrefab;
+    public float speed = .3f;
+    float _travelledDistance;
     
     // Update is called once per frame
     void Update()
     {
+        _travelledDistance += Time.deltaTime;
+
         if (Input.GetKeyDown("e"))
         {
             Debug.Log("e Pressed");
