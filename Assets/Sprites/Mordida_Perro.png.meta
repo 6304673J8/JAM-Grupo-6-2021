@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: 0a7c9ad51b991fb4bbab79579266b7f0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -765319869821430931
+    second: Mordida_Perro_0
+  - first:
+      213: -3085994324540751175
+    second: Mordida_Perro_1
+  - first:
+      213: 8957524933697503283
+    second: Mordida_Perro_2
+  - first:
+      213: 1687663090516610081
+    second: Mordida_Perro_3
+  - first:
+      213: 998679822321533970
+    second: Mordida_Perro_4
+  - first:
+      213: 7026260630652523256
+    second: Mordida_Perro_5
+  - first:
+      213: 2708179337154548710
+    second: Mordida_Perro_6
+  - first:
+      213: 1578254080673520958
+    second: Mordida_Perro_7
+  - first:
+      213: 5692983582866079988
+    second: Mordida_Perro_8
+  - first:
+      213: 5328679676563050384
+    second: Mordida_Perro_9
+  - first:
+      213: -2880886378402970252
+    second: Mordida_Perro_0
+  - first:
+      213: -1277413796638142112
+    second: Mordida_Perro_1
+  - first:
+      213: -8489990489829334039
+    second: Mordida_Perro_2
+  - first:
+      213: 7945570622278212426
+    second: Mordida_Perro_3
+  - first:
+      213: -2745623955946946105
+    second: Mordida_Perro_4
+  - first:
+      213: -2232942357271219632
+    second: Mordida_Perro_5
+  - first:
+      213: 4782150484021363450
+    second: Mordida_Perro_6
+  - first:
+      213: -5229990812074297020
+    second: Mordida_Perro_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +85,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +94,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -64,7 +118,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,7 +151,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mordida_Perro_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 372
+        width: 394
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47587093a190508d0800000000000000
+      internalID: -2880886378402970252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mordida_Perro_1
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 372
+        width: 394
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06153348be6b54ee0800000000000000
+      internalID: -1277413796638142112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mordida_Perro_2
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 372
+        width: 394
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e32743a1ae7d2a80800000000000000
+      internalID: -8489990489829334039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mordida_Perro_4
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 372
+        width: 394
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1cafa1f8595e9d0800000000000000
+      internalID: -2745623955946946105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mordida_Perro_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 84
+        width: 394
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af24e8e378c9d5240800000000000000
+      internalID: 4782150484021363450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

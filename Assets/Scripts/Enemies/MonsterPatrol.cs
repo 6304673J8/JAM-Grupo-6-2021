@@ -12,4 +12,20 @@ public class MonsterPatrol : MonoBehaviour
     bool isFacingRight = true;
 
     RaycastHit2D hit;
+
+    private void Update()
+    {
+        hit = Physics2D.Raycast(groundCheck.position, -transform.up, 1f, groundLayers);
+    }
+    private void FixedUpdate()
+    {
+        if(hit.collider != false)
+        {
+            Debug.Log("hitting ground");
+        }
+        else
+        {
+            Debug.Log("not hitting ground");
+        }
+    }
 }
