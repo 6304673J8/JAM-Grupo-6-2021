@@ -38,7 +38,7 @@ public class HammerLogic : MonoBehaviour
         //Vector2 dir = (Vector2)thrower.position - rb.position;
         //float route = speed * Time.deltaTime;
         _travelledDistance += Time.deltaTime;
-        if (_travelledDistance >= 1f)
+        if (_travelledDistance >= 0.4f)
         {
             isBack = true;
         }
