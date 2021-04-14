@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     
     //Animation
     public Animator animator;
+    private int hammerReturnedID;
     private int idleNoHammerID;
     private int runHammerID;
     private int runNoHammerID;
@@ -54,8 +55,10 @@ public class PlayerController : MonoBehaviour
         /*idleNoHammerID = Animator.StringToHash("")    ;
         runNoHammerID  = Animator.StringToHash("")    ;
         jumpNoHammerID = Animator.StringToHash("")    ;
-        attackHammerID = Animator.StringToHash("doHammer");
         */
+        hammerReturnedID = Animator.StringToHash("isBack");
+
+        attackHammerID = Animator.StringToHash("ThrownH");
         runHammerID = Animator.StringToHash("isHammerMoving");
         jumpHammerID = Animator.StringToHash("isHammerJumping");
     }
@@ -88,19 +91,15 @@ public class PlayerController : MonoBehaviour
         {
             direction = 1;
             lastDirection = 1;
-            //sprRend.flipX = false; 
+            sprRend.flipX = false; 
             isMoving = true;
-            if (direction > 0 && !m_FacingRight)
-                Flip();
         }
         else if (Input.GetKey("a"))
         {
             direction = -1;
             lastDirection = -1;
-            //sprRend.flipX = true;
+            sprRend.flipX = true;
             isMoving = true;
-            if (direction < 0 && m_FacingRight)
-                Flip();
         }
         else
         {
@@ -195,17 +194,4 @@ public class PlayerController : MonoBehaviour
         Debug.Log("CRACK");
         Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
     }
-    private void Flip()
-    {
-        // Switch the way the player is labelled as facing.
-        m_FacingRight = !m_FacingRight;
-
-        // Multiply the player's x local scale by -1.
-        transform.Rotate(0f, 180f, 0f);
-
-        /*Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;*/
-    }
-
 }

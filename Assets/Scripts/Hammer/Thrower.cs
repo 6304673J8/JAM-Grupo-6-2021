@@ -26,6 +26,6 @@ public class Thrower : MonoBehaviour
 
     void Throw()
     {
-        GameObject hammer = Instantiate(hammerPrefab, thrower.position + transform.right * 1.2f, thrower.rotation);
+        GameObject hammer = Instantiate(hammerPrefab, thrower.position, thrower.rotation);
     }
 }
