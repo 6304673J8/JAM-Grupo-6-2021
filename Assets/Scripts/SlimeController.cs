@@ -11,6 +11,7 @@ public class SlimeController : MonoBehaviour
     private BoxCollider2D box2D;
     private SpriteRenderer sprRend;
     private Animator animator;
+    private AudioSource clip;
 
     // Variables para modificar el personaje
     public float speed = 2;
@@ -43,6 +44,7 @@ public class SlimeController : MonoBehaviour
         box2D = GetComponent<BoxCollider2D>();
         sprRend = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        clip = GetComponent<AudioSource>();
         switch (enemyType)
         {
             case Enemy.JUMPER:
@@ -155,6 +157,7 @@ public class SlimeController : MonoBehaviour
     {
         if (collision.tag == "Hammer")
         {
+            clip.Play();
             switch (enemyType)
             {
                 case Enemy.JUMPER:
