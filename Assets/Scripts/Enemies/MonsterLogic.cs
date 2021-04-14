@@ -4,34 +4,26 @@ using UnityEngine;
 
 public class MonsterLogic : MonoBehaviour
 {
-    private int direction;
-    // Start is called before the first frame update
-    void Start()
-    {
-        direction = transform.parent.GetComponent<MonsterPatrol>().direction;
-    }
+	public Transform player;
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        direction = transform.parent.GetComponent<MonsterPatrol>().direction;
-        float posX = transform.parent.GetComponent<Transform>().position.x;
-        float posY = transform.parent.GetComponent<Transform>().position.y;
-        if (direction == 1)
-        {
-            transform.position = new Vector3(2f + posX, 0.5f + posY, 0);
-        }
-        else
-        {
-            transform.position = new Vector3(-2f + posX, 0.5f + posY, 0);
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            transform.parent.GetComponent<MonsterPatrol>().playerDetected = true;
-            transform.parent.GetComponent<MonsterPatrol>().totalTime = 0;
-        }
-    }
+	public bool isLookingAt = false;
+
+	public void LookAtPlayer()
+	{
+		Vector3 flipped = transform.localScale;
+		flipped.z *= -1f;
+
+		if (transform.position.x > player.position.x && isLookingAt)
+		{
+			transform.localScale = flipped;
+			transform.Rotate(0f, 180f, 0f);
+			isLookingAt = false;
+		}
+		else if (transform.position.x < player.position.x && !isLookingAt)
+		{
+			transform.localScale = flipped;
+			transform.Rotate(0f, 180f, 0f);
+			isLookingAt = true;
+		}
+	}
 }

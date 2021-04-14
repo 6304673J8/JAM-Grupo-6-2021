@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0a7c9ad51b991fb4bbab79579266b7f0
+guid: 6d4120bc8914efa498c5b5341b409293
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -56,6 +56,27 @@ TextureImporter:
   - first:
       213: -5229990812074297020
     second: Mordida_Perro_7
+  - first:
+      213: -4749411014419917225
+    second: Mordida_0
+  - first:
+      213: 5735604446376443504
+    second: Mordida_1
+  - first:
+      213: 9055835498437820409
+    second: Mordida_2
+  - first:
+      213: -9020542884688110635
+    second: Mordida_3
+  - first:
+      213: 7379578217770809488
+    second: Mordida_4
+  - first:
+      213: -6482313365248734886
+    second: Mordida_5
+  - first:
+      213: 8256789097843106498
+    second: Mordida_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -153,106 +174,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mordida_Perro_0
+      name: Mordida_0
       rect:
         serializedVersion: 2
-        x: 26
+        x: 87
         y: 372
-        width: 394
+        width: 331
         height: 262
-      alignment: 9
-      pivot: {x: 0.50000006, y: 0.1568664}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47587093a190508d0800000000000000
-      internalID: -2880886378402970252
+      spriteID: 7565c2988d3b61eb0800000000000000
+      internalID: -4749411014419917225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mordida_Perro_1
+      name: Mordida_1
       rect:
         serializedVersion: 2
-        x: 423
+        x: 473
         y: 372
-        width: 394
-        height: 262
-      alignment: 9
-      pivot: {x: 0.5, y: 0.14314108}
+        width: 331
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06153348be6b54ee0800000000000000
-      internalID: -1277413796638142112
+      spriteID: 07e3b6efad5f89f40800000000000000
+      internalID: 5735604446376443504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mordida_Perro_2
+      name: Mordida_2
       rect:
         serializedVersion: 2
-        x: 822
+        x: 862
         y: 372
-        width: 394
-        height: 262
-      alignment: 9
-      pivot: {x: 0.5091269, y: 0.11569051}
+        width: 340
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e32743a1ae7d2a80800000000000000
-      internalID: -8489990489829334039
+      spriteID: 9ff32cce76accad70800000000000000
+      internalID: 9055835498437820409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mordida_Perro_4
+      name: Mordida_3
       rect:
         serializedVersion: 2
-        x: 1237
-        y: 372
-        width: 394
-        height: 262
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1568664}
+        x: 1246
+        y: 533
+        width: 50
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c1cafa1f8595e9d0800000000000000
-      internalID: -2745623955946946105
+      spriteID: 5dbdcfc0a0890d280800000000000000
+      internalID: -9020542884688110635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mordida_Perro_6
+      name: Mordida_4
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 372
+        width: 340
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09870765a47896660800000000000000
+      internalID: 7379578217770809488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mordida_5
       rect:
         serializedVersion: 2
         x: 52
-        y: 84
-        width: 394
-        height: 262
-      alignment: 9
-      pivot: {x: 0.5, y: 0.14314124}
+        y: 229
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af24e8e378c9d5240800000000000000
-      internalID: 4782150484021363450
+      spriteID: a59059dc6523a06a0800000000000000
+      internalID: -6482313365248734886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mordida_6
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 83
+        width: 340
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2a14a20f1069270800000000000000
+      internalID: 8256789097843106498
       vertices: []
       indices: 
       edges: []

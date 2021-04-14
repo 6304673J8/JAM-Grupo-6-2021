@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
-public class PlayerController : MonoBehaviour
+public class AnimController : MonoBehaviour
 {
     /*Creación variables*/
     // Variables de componentes
     private Rigidbody2D rb2d;
     private BoxCollider2D box2D;
     private SpriteRenderer sprRend;
+    private bool m_FacingRight = true;
 
     // Variables para modificar el personaje
     public float speed = 2;
@@ -23,6 +25,38 @@ public class PlayerController : MonoBehaviour
     public GameObject deathbody;
     public GameObject levelLoader;
     private GameObject deathbodyToCrash;
+
+    //ToCopy Animation
+    private bool m_Grounded;            // Whether or not the player is grounded.
+
+    public Animator animator;
+    private int idleNoHammerID;
+    private int runHammerID;
+    private int runNoHammerID;
+    private int jumpHammerID;
+    private int jumpNoHammerID;
+    private int attackHammerID;
+    bool hasJumped = false;
+    [Header("Events")]
+    [Space]
+
+    public UnityEvent OnLandEvent;
+
+    [System.Serializable]
+    public class BoolEvent : UnityEvent<bool> { }
+
+    public BoolEvent OnHammerEvent;
+    private bool m_wasThrowing = false;
+
+    private void Awake()
+    {
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
+
+        if (OnHammerEvent == null)
+            OnHammerEvent = new BoolEvent();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,39 +66,70 @@ public class PlayerController : MonoBehaviour
         sprRend = GetComponent<SpriteRenderer>();
         startPosition = transform.position;
         hammer = true;
+
+        //ToCopy Animation
+        animator = GetComponent<Animator>();
+        /*idleNoHammerID = Animator.StringToHash("")    ;
+        runNoHammerID  = Animator.StringToHash("")    ;
+        jumpNoHammerID = Animator.StringToHash("")    ;
+        attackHammerID = Animator.StringToHash("doHammer");
+        */
+        runHammerID = Animator.StringToHash("isHammerMoving");
+        jumpHammerID   = Animator.StringToHash("isHammerJumping");
     }
 
     private void Update()
     {
+        //bool hasJumped = false;
         if (Input.GetKey("space") && !isJumping)
         {
             Destroy(deathbodyToCrash);
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
+            hasJumped = true;
+            
+            m_Grounded = false; 
+            animator.SetBool(jumpHammerID, true);
+
         }
+
         if (Input.GetKeyDown("f") && hammer)
         {
             GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
             transform.position = startPosition;
         }
+        //animator.SetBool(jumpHammerID, hasJumped);
+
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
+        bool wasGrounded = m_Grounded;
+
+        bool isMoving = false;
+
+        if (!wasGrounded)
+            OnLandEvent.Invoke();
         if (Input.GetKey("d"))
         {
+            isMoving = true;
             direction = 1;
-            sprRend.flipX = false;
+            if (direction > 0 && !m_FacingRight)
+                Flip();
         }
         else if (Input.GetKey("a"))
         {
+            isMoving = true;
+
             direction = -1;
-            sprRend.flipX = true;
+            if (direction < 0 && m_FacingRight)
+                Flip();
         }
         else
         {
             direction = 0;
         }
+        animator.SetBool(runHammerID, isMoving);
 
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
     }
@@ -72,8 +137,13 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Scenario")
         {
+            m_Grounded = true;
+
+            OnLandEvent.Invoke();
             if (isJumping)
             {
+                m_Grounded = false;
+
                 bool col1 = false;
                 bool col2 = false;
                 bool col3 = false;
@@ -101,6 +171,7 @@ public class PlayerController : MonoBehaviour
             {
                 isJumping = true;
             }
+
         }
         if (collision.gameObject.tag == "Body")
         {
@@ -112,6 +183,12 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void OnLanding()
+    {
+        animator.SetBool(jumpHammerID, false);
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         isJumping = true;
@@ -147,10 +224,16 @@ public class PlayerController : MonoBehaviour
             levelLoader.GetComponent<levelLoaderScript>().LoadNextLevel();
         }
     }
-
-    public void BossAttacked()
+    private void Flip()
     {
-        Debug.Log("CRACK");
-        Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
+
+        // Multiply the player's x local scale by -1.
+        transform.Rotate(0f, 180f, 0f);
+
+        /*Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;*/
     }
 }
