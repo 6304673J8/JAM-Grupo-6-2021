@@ -480,23 +480,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 798653049, guid: b770bd98ff81d2d43b69b2a833567851, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1858968380, guid: b770bd98ff81d2d43b69b2a833567851, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1858968380, guid: b770bd98ff81d2d43b69b2a833567851, type: 3}
-      propertyPath: xDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504301691118479273, guid: b770bd98ff81d2d43b69b2a833567851,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.37
-      objectReference: {fileID: 0}
     - target: {fileID: 8216808661691052720, guid: b770bd98ff81d2d43b69b2a833567851,
         type: 3}
       propertyPath: m_Name

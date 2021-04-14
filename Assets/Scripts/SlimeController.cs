@@ -28,7 +28,7 @@ public class SlimeController : MonoBehaviour
 
     public GameObject deathParticles;
 
-    private Color fColor;
+    public Color fColor;
 
     public float totalTime;
     // Start is called before the first frame update
@@ -50,18 +50,21 @@ public class SlimeController : MonoBehaviour
                 fColor = new Color(255, 255, 255, 255);
                 sprRend.color = fColor;
                 animator.SetInteger("EnemyType", 0);
+                fColor = new Color(199, 164, 76, 255);
                 break;
             case Enemy.WALKER:
                 fColor = new Color(255, 255, 255, 255);
                 //fColor = new Color(0, 152, 214, 255);
                 sprRend.color = fColor;
                 animator.SetInteger("EnemyType", 1);
+                fColor = new Color(90, 92, 178, 255);
                 break;
             case Enemy.DASHER:
                 fColor = new Color(255, 255, 255, 255);
                 //fColor = new Color(242, 229, 0, 255);
                 sprRend.color = fColor;
                 animator.SetInteger("EnemyType", 2);
+                fColor = new Color(0, 165, 102, 255);
                 break;
         }
         
@@ -152,6 +155,18 @@ public class SlimeController : MonoBehaviour
     {
         if (collision.tag == "Hammer")
         {
+            switch (enemyType)
+            {
+                case Enemy.JUMPER:
+                    fColor = new Color(209, 165, 0, 255);
+                    break;
+                case Enemy.WALKER:
+                    fColor = new Color(0, 0, 244, 255);
+                    break;
+                case Enemy.DASHER:
+                    fColor = new Color(0, 255, 0, 255);
+                    break;
+            }
             GameObject deathParticle = Instantiate(deathParticles, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
             deathParticle.gameObject.GetComponentInChildren<ParticleSystem>().startColor = fColor;
             Destroy(deathParticle, 3);

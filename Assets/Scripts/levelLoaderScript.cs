@@ -7,6 +7,7 @@ public class levelLoaderScript : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1000f;
+    private string sceneToLoad;
     public void LoadNextLevel()
     {
         transition.SetTrigger("Start");
@@ -15,6 +16,16 @@ public class levelLoaderScript : MonoBehaviour
     void loadTheScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void loadTheSceneWith(string scene)
+    {
+        transition.SetTrigger("Start");
+        sceneToLoad = scene;
+        Invoke("loadThisScene", 1);
+    }
+    void loadThisScene()
+    {
+        SceneManager.LoadScene(sceneToLoad);
     }
     // Start is called before the first frame update
     void Start()
