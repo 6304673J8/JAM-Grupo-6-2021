@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D box2D;
     private SpriteRenderer sprRend;
+    private AudioSource clip;
 
     //flip character
     private bool m_FacingRight = true;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public int direction;
     public int lastDirection;
     public bool isJumping;
+    private bool oneTime = true;
     private Vector3 startPosition;
 
     public GameObject deathbody;
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         box2D = GetComponent<BoxCollider2D>();
         sprRend = GetComponent<SpriteRenderer>();
+        clip = GetComponent<AudioSource>();
         startPosition = transform.position;
         hammer = true;
 
@@ -77,6 +80,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
             transform.position = startPosition;
+            clip.Play();
         }
         animator.SetBool(jumpHammerID, hasJumped);
 
@@ -170,11 +174,21 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" ) {
             transform.position = startPosition;
+            clip.Play();
         }
         else if (collision.gameObject.tag == "Lava")
         {
-            GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
-            transform.position = startPosition;
+            if (oneTime)
+            {
+                GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
+                transform.position = startPosition;
+                oneTime = false;
+                clip.Play();
+            }
+            else
+            {
+                oneTime = true;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

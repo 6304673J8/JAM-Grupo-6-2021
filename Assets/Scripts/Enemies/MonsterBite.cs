@@ -10,13 +10,18 @@ public class MonsterBite : MonoBehaviour
 	public Vector3 biteOffset;
 	public float biteRange = 1f;
 	public LayerMask biteMask;
+	private AudioSource clip;
+    private void Start()
+    {
+		clip = GetComponent<AudioSource>();
+	}
 
-	public void Bite()
+    public void Bite()
 	{
 		Vector3 pos = transform.position;
 		pos += transform.right * biteOffset.x;
 		pos += transform.up * biteOffset.y;
-
+		clip.Play();
 		Collider2D colInfo = Physics2D.OverlapCircle(pos, biteRange, biteMask);
 		if (colInfo != null)
 		{
