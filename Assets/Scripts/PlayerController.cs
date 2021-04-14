@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D box2D;
     private SpriteRenderer sprRend;
 
+    //flip character
+    private bool m_FacingRight = true;
+
     // Variables para modificar el personaje
     public float speed = 2;
     public int jumpForce = 3;
@@ -24,6 +27,15 @@ public class PlayerController : MonoBehaviour
     public GameObject deathbody;
     public GameObject levelLoader;
     private GameObject deathbodyToCrash;
+    
+    //Animation
+    public Animator animator;
+    private int idleNoHammerID;
+    private int runHammerID;
+    private int runNoHammerID;
+    private int jumpHammerID;
+    private int jumpNoHammerID;
+    private int attackHammerID;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,41 +46,67 @@ public class PlayerController : MonoBehaviour
         sprRend = GetComponent<SpriteRenderer>();
         startPosition = transform.position;
         hammer = true;
+
+        //ToCopy Animation
+
+
+        animator = GetComponent<Animator>();
+        /*idleNoHammerID = Animator.StringToHash("")    ;
+        runNoHammerID  = Animator.StringToHash("")    ;
+        jumpNoHammerID = Animator.StringToHash("")    ;
+        attackHammerID = Animator.StringToHash("doHammer");
+        */
+        runHammerID = Animator.StringToHash("isHammerMoving");
+        jumpHammerID = Animator.StringToHash("isHammerJumping");
     }
 
     private void Update()
     {
+        bool hasJumped = false;
+
         if (Input.GetKey("space") && !isJumping)
         {
             Destroy(deathbodyToCrash);
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
+            hasJumped = true;
         }
         if (Input.GetKeyDown("f") && hammer)
         {
             GameObject deathBody = Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
             transform.position = startPosition;
         }
+        animator.SetBool(jumpHammerID, hasJumped);
+
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
+        bool isMoving = false;
+
         if (Input.GetKey("d"))
         {
             direction = 1;
             lastDirection = 1;
-            sprRend.flipX = false;
+            //sprRend.flipX = false; 
+            isMoving = true;
+            if (direction > 0 && !m_FacingRight)
+                Flip();
         }
         else if (Input.GetKey("a"))
         {
             direction = -1;
             lastDirection = -1;
-            sprRend.flipX = true;
+            //sprRend.flipX = true;
+            isMoving = true;
+            if (direction < 0 && m_FacingRight)
+                Flip();
         }
         else
         {
             direction = 0;
         }
+        animator.SetBool(runHammerID, isMoving);
 
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
     }
@@ -157,4 +195,17 @@ public class PlayerController : MonoBehaviour
         Debug.Log("CRACK");
         Instantiate(deathbody, new Vector3(transform.position.x, transform.position.y, 1f), transform.rotation);
     }
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
+
+        // Multiply the player's x local scale by -1.
+        transform.Rotate(0f, 180f, 0f);
+
+        /*Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;*/
+    }
+
 }
