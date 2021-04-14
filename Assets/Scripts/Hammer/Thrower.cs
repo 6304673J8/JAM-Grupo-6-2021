@@ -9,7 +9,10 @@ public class Thrower : MonoBehaviour
     public GameObject throwerVisible;
     public float speed = .3f;
     float _travelledDistance;
-    
+
+    //animation
+    public Animator animator;
+
     // Update is called once per frame
     void Update()
     {
