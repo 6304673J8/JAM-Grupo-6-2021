@@ -5,8 +5,10 @@ using UnityEngine;
 public class HammerLogic : MonoBehaviour
 {
     public float speed = .3f;
+    private bool direction;
     //public float distance = 5f;
     private Transform thrower;
+    public GameObject player;
     Rigidbody2D rb;
 
     float _travelledDistance;
@@ -21,6 +23,14 @@ public class HammerLogic : MonoBehaviour
         //thrower = GameObject.FindGameObjectWithTag("Finish").transform;
         thrower = GameObject.FindGameObjectWithTag("Player").transform;
         _travelledDistance = 0.0f;
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().lastDirection == 1)
+        {
+            direction = true;
+        }
+        else
+        {
+            direction = false;
+        }
         //thrower.gameObject.SetActive(true); // activating the object
     }
 
@@ -42,19 +52,35 @@ public class HammerLogic : MonoBehaviour
         {
             isBack = true;
         }
-
+        
         if (!isBack)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime); //hammer moves
-            //_travelledDistance += route; //updates distance
-            //isBack = _travelledDistance >= distance;
+            if (direction)
+            {
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(Vector2.left * speed * Time.deltaTime);
+            }
+                
+                                                                            //hammer moves
+                                                                             //_travelledDistance += route; //updates distance
+                                                                             //isBack = _travelledDistance >= distance;
         }
         else
         {
-            //transform.right = thrower.position - transform.position;
-            transform.Translate(Vector2.right * -(speed * Time.deltaTime)); //moves object
-            //_travelledDistance -= route;
-            //enabled = _travelledDistance > 0;
+            if (direction)
+            {
+                //transform.right = thrower.position - transform.position;
+                transform.Translate(Vector2.right * -(speed * Time.deltaTime)); //moves object
+                                                                                //_travelledDistance -= route;
+                                                                                //enabled = _travelledDistance > 0;
+            }
+            else
+            {
+                transform.Translate(Vector2.left * -(speed * Time.deltaTime));
+            }
         }
     }
 

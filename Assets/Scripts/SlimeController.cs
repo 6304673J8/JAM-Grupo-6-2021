@@ -10,6 +10,7 @@ public class SlimeController : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D box2D;
     private SpriteRenderer sprRend;
+    private Animator animator;
 
     // Variables para modificar el personaje
     public float speed = 2;
@@ -41,21 +42,29 @@ public class SlimeController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         box2D = GetComponent<BoxCollider2D>();
         sprRend = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         switch (enemyType)
         {
             case Enemy.JUMPER:
-                fColor = new Color(214, 0, 0, 255);
+                //fColor = new Color(214, 0, 0, 255);
+                fColor = new Color(255, 255, 255, 255);
                 sprRend.color = fColor;
+                animator.SetInteger("EnemyType", 0);
                 break;
             case Enemy.WALKER:
-                fColor = new Color(0, 152, 214, 255);
+                fColor = new Color(255, 255, 255, 255);
+                //fColor = new Color(0, 152, 214, 255);
                 sprRend.color = fColor;
+                animator.SetInteger("EnemyType", 1);
                 break;
             case Enemy.DASHER:
-                fColor = new Color(242, 229, 0, 255);
+                fColor = new Color(255, 255, 255, 255);
+                //fColor = new Color(242, 229, 0, 255);
                 sprRend.color = fColor;
+                animator.SetInteger("EnemyType", 2);
                 break;
         }
+        
     }
 
     // Update is called once per frame
@@ -64,6 +73,7 @@ public class SlimeController : MonoBehaviour
         float delta = Time.fixedDeltaTime * 1000;
         if (playerDetected)
         {
+            animator.SetBool("attack", true);
             if (enemyType == Enemy.JUMPER)
             {
                 if (firstJ)
@@ -73,6 +83,7 @@ public class SlimeController : MonoBehaviour
                         totalTime = 0;
                         firstJ = false;
                         secondJ = true;
+                        animator.SetBool("attack", false);
                     }
                     rb2d.velocity = new Vector2(direction * speed, jumpForce);
                 }
@@ -84,6 +95,7 @@ public class SlimeController : MonoBehaviour
                         firstJ = true;
                         secondJ = false;
                         playerDetected = false;
+                        animator.SetBool("attack", false);
                     }
                     rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y);
                 }
@@ -98,6 +110,7 @@ public class SlimeController : MonoBehaviour
                         firstJ = true;
                         playerDetected = false;
                         speed = 2;
+                        animator.SetBool("attack", false);
                     }
                     speed = 3;
                     rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
@@ -119,6 +132,14 @@ public class SlimeController : MonoBehaviour
             }
             
             rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
+        }
+        if (direction == 1)
+        {
+            sprRend.flipX = false;
+        }
+        else
+        {
+            sprRend.flipX = true;
         }
         totalTime += delta;
     }

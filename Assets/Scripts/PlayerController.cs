@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public bool hammer;
     public int direction;
+    public int lastDirection;
     public bool isJumping;
     private Vector3 startPosition;
 
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         direction = 1;
+        lastDirection = 1;
         rb2d = GetComponent<Rigidbody2D>();
         box2D = GetComponent<BoxCollider2D>();
         sprRend = GetComponent<SpriteRenderer>();
@@ -54,11 +56,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("d"))
         {
             direction = 1;
+            lastDirection = 1;
             sprRend.flipX = false;
         }
         else if (Input.GetKey("a"))
         {
             direction = -1;
+            lastDirection = -1;
             sprRend.flipX = true;
         }
         else

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7175071690677681754}
   - component: {fileID: 7175071690677681757}
   - component: {fileID: 7175071690677681753}
+  - component: {fileID: 338265171}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -146,12 +147,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   jumpForce: 3
-  enemyType: 0
+  enemyType: 2
   direction: 0
   playerDetected: 0
   deathParticles: {fileID: 7345617981231397492, guid: daec885012f7f084f9656001028e79c8,
     type: 3}
   totalTime: 0
+--- !u!95 &338265171
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175071690677681756}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5873bd3bf4c972499d89b56aba0a5ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7175071691332173449
 GameObject:
   m_ObjectHideFlags: 0
