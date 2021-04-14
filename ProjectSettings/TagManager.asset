@@ -12,6 +12,7 @@ TagManager:
   - Lava
   - CheckPoint
   - NextLevel
+  - Final
   layers:
   - Default
   - TransparentFX
