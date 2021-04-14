@@ -127,19 +127,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8216808661123324405}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &171916343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171916342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1afa5fc25e2b4d54d9b8c76cd37102b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 8
 --- !u!1 &312644622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,21 +2071,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8216808661691052723, guid: b770bd98ff81d2d43b69b2a833567851,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8216808661691052723, guid: b770bd98ff81d2d43b69b2a833567851,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 4.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8216808661691052723, guid: b770bd98ff81d2d43b69b2a833567851,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 8.9
       objectReference: {fileID: 0}
     - target: {fileID: 8216808661691052732, guid: b770bd98ff81d2d43b69b2a833567851,
         type: 3}

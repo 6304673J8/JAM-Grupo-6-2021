@@ -35,7 +35,6 @@ public class AnimController : MonoBehaviour
     private int runNoHammerID;
     private int jumpHammerID;
     private int jumpNoHammerID;
-    private int attackHammerID;
     bool hasJumped = false;
     [Header("Events")]
     [Space]

@@ -12,18 +12,44 @@ public class Thrower : MonoBehaviour
 
     //animation
     public Animator animator;
+    private int attackHammerID;
+    private int noHammerID;
 
+    bool attacked = false;
+    private void Start()
+    {
+        attackHammerID = Animator.StringToHash("ThrownH");
+        noHammerID = Animator.StringToHash("isBack");
+
+    }
     // Update is called once per frame
     void Update()
     {
+        attacked = false;
+
         _travelledDistance += Time.deltaTime;
 
         if (Input.GetKeyDown("e") && GetComponent<PlayerController>().hammer)
         {
-            Debug.Log("e Pressed");
-            Throw();
+            animator.SetTrigger(attackHammerID);
+            Invoke("Throw", .6f);
+            //Throw();
+            attacked = true;
             throwerVisible.SetActive(false);
             GetComponent<PlayerController>().hammer = false;
+            animator.SetBool(noHammerID, false);
+
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Hammer")
+        {
+            Debug.Log("Test");
+            animator.SetBool(noHammerID, true);
+            //animator.SetBool(noHammerID, true);
+
         }
     }
 
