@@ -187,6 +187,10 @@ public class PlayerController : MonoBehaviour
         {
             levelLoader.GetComponent<levelLoaderScript>().LoadNextLevel();
         }
+        else if (collision.tag == "Final")
+        {
+            levelLoader.GetComponent<levelLoaderScript>().loadTheSceneWith("MainMenu");
+        }
     }
 
     public void BossAttacked()
