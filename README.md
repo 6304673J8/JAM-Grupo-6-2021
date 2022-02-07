@@ -1,2 +1,2 @@
 # JAM-Grupo-6-2021
-Repositorio para la GameJam de ENTI 2021
+GameJam Repository - ENTI 2021
